@@ -1,24 +1,16 @@
 from conexao import conecta_db
+from cliente import opcao_menu 
 
-def opcao_menu():
-    print ("|-----------------------------------------------------------------------------------------------------------------|")
-    print ("|                                            Cadastro do Cliente                                                  |")
-    print ("|-----------------------------------------------------------------------------------------------------------------|")
-    print ("| 1  -  Listar | 2  -  Consultar um Cliente por ID | 3  -  Inserir | 4  -  Alterar | 5  -  Deletar | 6  -  Voltar |")
-    print ("|-----------------------------------------------------------------------------------------------------------------|")
-
-def menu_cliente():
-    opcao_menu()   
-    
+def categotia_menu():
     while True:
         opcao = input("Escolha uma opção: ")
-        conexao = conecta_db()
+        conexao = opcao_menu()
 
 
         if opcao ==  "1":
-            listar_clientes(conexao)
+            opcao_menu(conexao)
         elif opcao == "2":
-            listar_clientes(conexao)
+            opcao_menu(conexao)
             consultar_cliente_por_id(conexao)
 
         elif opcao == "3":
