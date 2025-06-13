@@ -2,7 +2,7 @@ from conexao import conecta_db
 from cliente import opcao_menu 
 from menu import opcao_menu
 
-opcao_menu()
+
 
 def categoria_menu(titulo):
     opcao_menu(titulo)
@@ -48,7 +48,7 @@ def categoria_menu(titulo):
 def listar_categoria(conexao):
     cursor = conexao.cursor()
     #Execução de select no banco de dados
-    cursor.execute("select id, nome from categoria order by id desc")
+    cursor.execute("select id, nome, valor_venda, estoque  from produto order by id desc")
     registros = cursor.fetchall() #recupera todos os registros
     print("--------------------------------------------------")
 
